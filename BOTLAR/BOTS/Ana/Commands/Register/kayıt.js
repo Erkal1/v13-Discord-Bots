@@ -40,16 +40,19 @@ class Kayit extends Command {
     const row = new Discord.MessageActionRow()
       .addComponents(
         new Discord.MessageButton()
-          .setCustomId('Erkek')
+          .setCustomId('MAN')
           .setEmoji(`${emojiler.male}`)
+          .setLabel("Erkek")
           .setStyle('PRIMARY'),
         new Discord.MessageButton()
-          .setCustomId('Kadın')
+          .setCustomId('WOMAN')
           .setEmoji(`${emojiler.female}`)
+          .setLabel("Kadın")
           .setStyle('PRIMARY'),
         new Discord.MessageButton()
           .setCustomId('CANCEL')
           .setEmoji(`${emojiler.basarisiz}`)
+          .setLabel("İptal")
           .setStyle('PRIMARY'),
       );
     let msg = await message.channel.send({ components: [row], embeds: [embed.setDescription(`${member} adlı kullanıcının cinsiyetini buttonlara tıklayarak belirtiniz lütfen.`)] })
