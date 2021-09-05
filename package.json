@@ -1,0 +1,28 @@
+{
+  "name": "botlar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.config.js",
+  "scripts": {
+    "heroku-postbuild": "npm install pm2",
+    "start": "pm2-runtime start app.config.js --env production"
+  },
+  "engines": {
+    "node": "16.6"
+  },
+  "author": "Erkal",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/voice": "^0.6.0",
+    "chalk": "^4.1.2",
+    "child_process": "^1.0.2",
+    "cron": "^1.8.2",
+    "discord.js": "^13.1.0",
+    "lowdb": "^1.0.0",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "mongoose": "^5.13.8",
+    "ms": "^2.1.3",
+    "request": "^2.88.2"
+  }
+}

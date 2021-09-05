@@ -1,0 +1,34 @@
+{
+  "guildID": "583728040211644427",
+  "prefix": ".",
+  "sunucuisim": "☥ Icathia",
+  "altbaslik": "☥ Developed By Erkal",
+  "tag": "☥",
+  "tagsiz": "⦁",
+  "yasakTaglar": [
+    "Җ"
+  ],
+  "root": "774559201849901087",
+  "Owners": [
+    "774559201849901087",
+    "498202020168335381",
+    "697452389082464326",
+    "792866281593372722",
+    "347116268735954945",
+    "574686397831839785"
+  ],
+  "muteLimit": 3,
+  "banLimit": 2,
+  "jailLimit": 2,
+  "kayitsizLimit": 2,
+  "cmdLimit": 3,
+  "Sure": 60,
+  "userTime": 604800000,
+  "durum": {
+    "name": "☥ I C A T H I A",
+    "url": "https://www.twitch.tv/icathia",
+    "type": "STREAMING"
+  },
+  "MongoURL": "mongodb+srv://erkal:8439.kGb0z@icathia.p2usv.mongodb.net/icathia?retryWrites=true&w=majority",
+  "sunucuUrl": "icathia"
+}
