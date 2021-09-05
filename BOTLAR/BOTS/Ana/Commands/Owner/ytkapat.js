@@ -3,7 +3,7 @@ class YetkiKapat extends Command {
   constructor(client) {
     super(client, {
       name: "yetkikapat",
-      aliases: ["yetkikapat", "ytkapat", "güvenli"],
+      aliases: ["yetkikapat", "ytkapat"],
       ownerOnly: true,
     });
   }
