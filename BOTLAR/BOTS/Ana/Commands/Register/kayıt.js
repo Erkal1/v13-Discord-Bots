@@ -53,7 +53,7 @@ class Kayit extends Command {
           .setCustomId('CANCEL')
           .setEmoji(`${emojiler.basarisiz}`)
           .setLabel("İptal")
-          .setStyle('PRIMARY'),
+          .setStyle('DANGER'),
       );
     let msg = await message.channel.send({ components: [row], embeds: [embed.setDescription(`${member} adlı kullanıcının cinsiyetini buttonlara tıklayarak belirtiniz lütfen.`)] })
     var filter = (button) => button.user.id === message.author.id;
