@@ -40,12 +40,12 @@ class Kayit extends Command {
     const row = new Discord.MessageActionRow()
       .addComponents(
         new Discord.MessageButton()
-          .setCustomId('MAN')
+          .setCustomId('Erkek')
           .setEmoji(`${emojiler.male}`)
           .setLabel("Erkek")
           .setStyle('PRIMARY'),
         new Discord.MessageButton()
-          .setCustomId('WOMAN')
+          .setCustomId('Kadın')
           .setEmoji(`${emojiler.female}`)
           .setLabel("Kadın")
           .setStyle('PRIMARY'),
