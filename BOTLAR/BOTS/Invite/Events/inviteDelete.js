@@ -3,7 +3,7 @@ class InviteDelete {
   async run(invite) {
     setTimeout(async () => {
       invite.guild.invites.fetch().then((guildInvites) => {
-        const cacheInvites = new Collection();
+        const cacheInvites = new Discord.Collection();
         guildInvites.map((inv) => {
           cacheInvites.set(inv.code, { code: inv.code, uses: inv.uses, inviter: inv.inviter });
         });
