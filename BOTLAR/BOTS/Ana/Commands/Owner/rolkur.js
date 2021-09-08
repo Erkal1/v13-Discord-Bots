@@ -9,9 +9,9 @@ class RolKur extends Command {
     });
   }
   async run(client, message, args, embed) {
-    if (!args[0] || isNaN(args[0])) return message.channel.send({ embeds: [embed.setDescription("Lütfen bir rol ID'si belirtiniz!")] });
+    if (!args[0] || isNaN(args[0])) return message.channel.send(cevaplar.rolBelirt)
     await roleBackup.findOne({ roleID: args[0] }, async (err, data) => {
-      if (!data) return message.channel.send({ embeds: [embed.setDescription("Belirtilen rol ID'sine ait veri bulunamadı!")] });
+      if (!data) return message.channel.send(`${emojiler.hata} **UYARI:** Belirtilen rol ID'sine ait veri bulunamadı!`);
       const newRole = await message.guild.roles.create({
         name: data.name,
         color: data.color,
