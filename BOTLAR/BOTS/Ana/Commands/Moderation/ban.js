@@ -29,6 +29,7 @@ class Ban extends Command {
         if (uye && !uye.bannable) return message.channel.send(cevaplar.yetersizYetkim)
         if (uye && uye.roles.highest.position >= message.member.roles.highest.position && !ayarlar.Owners.includes(message.author.id)) return message.channel.send(cevaplar.üstAynıYetki)
         if (!reason) return message.channel.send(cevaplar.sebepBelirt)
+        if (uye) { uye.send({ content: `**${message.guild.name}** sunucusunda, **${message.author.tag}** tarafından **${reason}** sebebiyle yasaklandın.` }).catch(err => message.channel.send({ content: `<@!${uye.id}> adlı kullanıcının özel mesajları kapalı olduğu için bilgilendirme mesajı gönderilmedi` })) }
         await message.guild.members.ban(user.id, { reason: reason + ` Yetkili: ${message.author.id}` })
         const cezaVeri = await Penalties.findOne({ guildID: message.guild.id, userID: user.id, Ceza: "UNBAN", Aktif: true });
         if (cezaVeri) { cezaVeri.Aktif = false; await cezaVeri.save(); }
@@ -37,7 +38,6 @@ class Ban extends Command {
         zamanDamga.set(message.author.id, Date.now());
         if (ayarlar.banLimit > 0 && !ayarlar.Owners.includes(message.author.id)) { if (!client.banLimit.has(message.author.id)) client.banLimit.set(message.author.id, 1); else { client.banLimit.set(message.author.id, client.banLimit.get(message.author.id) + 1); }; setTimeout(() => { if (client.banLimit.has(message.author.id)) client.banLimit.delete(message.author.id); zamanDamga.delete(message.author.id); }, beklemeSuresi); }
         message.guild.log("Yasaklanma", user.id, message.author.id, channels.get('banLog').value(), ceza.id, reason)
-        if (uye) { uye.send({ content: `**${message.guild.name}** sunucusunda, **${message.author.tag}** tarafından **${reason}** sebebiyle yasaklandın.` }).catch(err => message.channel.send({ content: `<@!${uye.id}> adlı kullanıcının özel mesajları kapalı olduğu için bilgilendirme mesajı gönderilmedi` })) }
     }
 }
 
