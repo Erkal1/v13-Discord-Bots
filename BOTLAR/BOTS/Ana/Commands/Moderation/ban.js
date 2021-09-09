@@ -23,7 +23,7 @@ class Ban extends Command {
         if (banlı) return message.channel.send(cevaplar.banlı);
         const uye = message.guild.members.cache.get(user.id)
         const reason = args.splice(1).join(" ");
-        if (ayarlar.Owners.includes(user.id)) return message.channel.send(cevaplar.botSahibi)
+        if (ayarlar.Owners.includes(user.id) && message.author.id !== ayarlar.root) return message.channel.send(cevaplar.botSahibi)
         if (uye === message.member) return message.channel.send(cevaplar.kendisi)
         if (uye && uye.user.bot) return message.channel.send(cevaplar.üyeBot)
         if (uye && !uye.bannable) return message.channel.send(cevaplar.yetersizYetkim)
