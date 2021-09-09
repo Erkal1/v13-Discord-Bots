@@ -10,6 +10,7 @@ class YasakTag extends Command {
   async run(client, message, args, embed) {
     const utils = await low(client.adapters('guard'));
     const settings = await low(client.adapters('ayarlar'))
+    const yasakTag = settings.get("yasakTaglar").value()
     const yazı = ` - Yasak Tag`
     if (!args[0] || args[0].toLowerCase() !== "aç" && args[0].toLowerCase() !== "kapat" && args[0].toLowerCase() !== "ekle" && args[0].toLowerCase() !== "çıkar" && args[0].toLowerCase() !== "liste") {
       message.channel.send({
@@ -49,7 +50,7 @@ class YasakTag extends Command {
       if (!tag) return message.channel.send({ embeds: [embed.setDescription(`Lütfen yasaklı taga eklemek için geçerli bir tag belirtin ${emojiler.dikkat}`)] });
       else if (yasakTag.some(x => x.includes(tag))) return message.channel.send({ embeds: [embed.setDescription(`Bu tag zaten yasaklı ${emojiler.dikkat}`)] })
       else {
-        utils.get("yasakTaglar").push(tag).write()
+        settings.get("yasakTaglar").push(tag).write()
         message.channel.send({ embeds: [embed.setDescription(`**${tag}** başarı ile yasaklı taga eklendi ${emojiler.mavionay}`)] })
       }
     } else if (args[0].toLowerCase() === "çıkar") {
@@ -57,7 +58,7 @@ class YasakTag extends Command {
       if (!tag) return message.channel.send({ embeds: [embed.setDescription(`Lütfen yasaklı taga eklemek için geçerli bir tag belirtin ${emojiler.dikkat}`)] });
       else if (!yasakTag.some(x => x.includes(tag))) return message.channel.send({ embeds: [embed.setDescription(`Bu tag zaten yasaklı değil ${emojiler.dikkat}`)] })
       else {
-        utils.get("yasakTaglar").pull(tag).write()
+        settings.get("yasakTaglar").pull(tag).write()
         message.channel.send({ embeds: [embed.setDescription(`**${tag}** başarı ile yasaklı tagdan çıkarıldı ${emojiler.kirmizionay}`)] })
       }
     } else if (args[0].toLowerCase() === "liste") {
