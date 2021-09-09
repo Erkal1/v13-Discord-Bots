@@ -17,7 +17,7 @@ class Eval extends Command {
             //eval("(async () => { " + code + "})();")
             const code = message.content.split(' ').slice(1).join(' ');
             let evaled = clean(await eval(code));
-            if (typeof evaled !== "string") evaled = util.inspect(evaled).replace(client.token, "Yasaklı komut").replace(ayarlar.mongoUrl, "https://pornhub.com/")
+            if (typeof evaled !== "string") evaled = util.inspect(evaled).replace(client.token, "Yasaklı komut").replace(ayarlar.MongoURL, "https://pornhub.com/")
             const arr = Discord.Util.splitMessage(evaled, { maxLength: 1950, char: "\n" });
             arr.forEach(element => {
                 message.channel.send(Discord.Formatters.codeBlock("js", element));
