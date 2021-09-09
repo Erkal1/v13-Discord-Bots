@@ -9,6 +9,7 @@ class YasakTag extends Command {
   }
   async run(client, message, args, embed) {
     const utils = await low(client.adapters('guard'));
+    const settings = await low(client.adapters('ayarlar'))
     const yazı = ` - Yasak Tag`
     if (!args[0] || args[0].toLowerCase() !== "aç" && args[0].toLowerCase() !== "kapat" && args[0].toLowerCase() !== "ekle" && args[0].toLowerCase() !== "çıkar" && args[0].toLowerCase() !== "liste") {
       message.channel.send({
