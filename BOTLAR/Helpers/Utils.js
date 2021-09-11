@@ -108,7 +108,7 @@ module.exports = async (client) => {
     channel = client.channels.cache.get(channel);
     const sure = Time || `-`
     if (channel) {
-      channel.send({ embeds: [new Discord.MessageEmbed().setAuthor(author.tag, author.avatarURL({ dynamic: true })).setColor("RANDOM").setDescription(`**Üye:** ${uye.tag} (${uye.id})\n**Yetkili:** ${author.tag} (${author.id})\n**Tarih:** ${new Date(Date.now()).toTurkishFormatDate()}\n**Süre:** ${sure}\n**Sebep:** ${reason}`).setThumbnail(uye.avatarURL({ dynamic: true })).setTimestamp().setFooter(`Kasa Numarası: #${ceza}`, client.user.avatarURL())] })
+      channel.send({ embeds: [new Discord.MessageEmbed().setAuthor(author.tag, author.avatarURL({ dynamic: true })).setColor("RANDOM").setTitle(action).setDescription(`**Üye:** ${uye.tag} (${uye.id})\n**Yetkili:** ${author.tag} (${author.id})\n**Tarih:** ${new Date(Date.now()).toTurkishFormatDate()}\n**Süre:** ${sure}\n**Sebep:** ${reason}`).setThumbnail(uye.avatarURL({ dynamic: true })).setTimestamp().setFooter(`Kasa Numarası: #${ceza}`, client.user.avatarURL())] })
     }
   }
 
@@ -117,7 +117,7 @@ module.exports = async (client) => {
     const uye = client.users.cache.get(user)
     channel = client.channels.cache.get(channel);
     if (channel) {
-      channel.send({ embeds: [new Discord.MessageEmbed().setAuthor(author.tag, author.avatarURL({ dynamic: true })).setColor("RANDOM").setDescription(`**Üye:** ${uye.tag} (${uye.id})\n**Yetkili:** ${author.tag} (${author.id})\n**Tarih:** ${new Date(Date.now()).toTurkishFormatDate()}`).setThumbnail(uye.avatarURL({ dynamic: true })).setTimestamp().setFooter(`Kasa Numarası: #${ceza}`, client.user.avatarURL())] })
+      channel.send({ embeds: [new Discord.MessageEmbed().setAuthor(author.tag, author.avatarURL({ dynamic: true })).setTitle(action).setColor("RANDOM").setDescription(`**Üye:** ${uye.tag} (${uye.id})\n**Yetkili:** ${author.tag} (${author.id})\n**Tarih:** ${new Date(Date.now()).toTurkishFormatDate()}`).setThumbnail(uye.avatarURL({ dynamic: true })).setTimestamp().setFooter(`Kasa Numarası: #${ceza}`, client.user.avatarURL())] })
     }
   }
 
