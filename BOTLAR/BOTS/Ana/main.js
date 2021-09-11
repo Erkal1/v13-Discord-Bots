@@ -15,8 +15,7 @@ const client = global.client = new Erkal({
     Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
   ],
   presence: {
-    activities: [ayarlar.durum],
-    status: ayarlar.status
+    status: "invisible"
   },
 });
 require("../../Helpers/Utils")(client)
