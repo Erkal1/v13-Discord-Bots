@@ -107,13 +107,8 @@ module.exports = async (client) => {
     const uye = client.users.cache.get(user)
     channel = client.channels.cache.get(channel);
     const sure = Time || `-`
-    let eylem;
-    if (action === "Chat Mute") eylem = "metin kanallarından susturuldu!"
-    if (action === "Cezalı") eylem = "cezalandırıldı!"
-    if (action === "Uyarı") eylem = "uyarıldı!"
-    if (action === "Yasaklanma") eylem = "sunucudan yasaklandı!"
     if (channel) {
-      channel.send({ embeds: [new Discord.MessageEmbed().setAuthor(author.tag, author.avatarURL({ dynamic: true })).setColor("RANDOM").setTitle(action).setDescription(`Kullanıcı başarıyla ${eylem} \n\n**Üye:** ${uye.tag} (${uye.id})\n**Yetkili:** ${author.tag} (${author.id})\n**Tarih:** ${new Date(Date.now()).toTurkishFormatDate()}\n**Süre:** ${sure}\n**Sebep:** ${reason}`).setThumbnail(uye.avatarURL({ dynamic: true })).setTimestamp().setFooter(`Kasa Numarası: #${ceza}`, client.user.avatarURL())] })
+      channel.send({ embeds: [new Discord.MessageEmbed().setAuthor(author.tag, author.avatarURL({ dynamic: true })).setColor("RANDOM").setDescription(`**Üye:** ${uye.tag} (${uye.id})\n**Yetkili:** ${author.tag} (${author.id})\n**Tarih:** ${new Date(Date.now()).toTurkishFormatDate()}\n**Süre:** ${sure}\n**Sebep:** ${reason}`).setThumbnail(uye.avatarURL({ dynamic: true })).setTimestamp().setFooter(`Kasa Numarası: #${ceza}`, client.user.avatarURL())] })
     }
   }
 
@@ -121,12 +116,8 @@ module.exports = async (client) => {
     const author = client.users.cache.get(admin)
     const uye = client.users.cache.get(user)
     channel = client.channels.cache.get(channel);
-    let eylem;
-    if (action === "Chat Mute Kaldırma") eylem = "metin kanallarındaki susturulması başarıyla kaldırıldı!"
-    if (action === "Cezalı Çıkarma") eylem = "cezası başarıyla kaldırıldı!"
-    if (action === "Yasak Kaldırma") eylem = "yasağı başarıyla kaldırıldı!"
     if (channel) {
-      channel.send({ embeds: [new Discord.MessageEmbed().setAuthor(author.tag, author.avatarURL({ dynamic: true })).setColor("RANDOM").setTitle(action).setDescription(`Kullanıcının ${eylem} \n\n**Üye:** ${uye.tag} (${uye.id})\n**Yetkili:** ${author.tag} (${author.id})\n**Tarih:** ${new Date(Date.now()).toTurkishFormatDate()}`).setThumbnail(uye.avatarURL({ dynamic: true })).setTimestamp().setFooter(`Kasa Numarası: #${ceza}`, client.user.avatarURL())] })
+      channel.send({ embeds: [new Discord.MessageEmbed().setAuthor(author.tag, author.avatarURL({ dynamic: true })).setColor("RANDOM").setDescription(`**Üye:** ${uye.tag} (${uye.id})\n**Yetkili:** ${author.tag} (${author.id})\n**Tarih:** ${new Date(Date.now()).toTurkishFormatDate()}`).setThumbnail(uye.avatarURL({ dynamic: true })).setTimestamp().setFooter(`Kasa Numarası: #${ceza}`, client.user.avatarURL())] })
     }
   }
 
