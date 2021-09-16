@@ -1,1 +1,1 @@
-sa
+Ananı sikim dc gibi
