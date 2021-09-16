@@ -1,31 +1,31 @@
 {
-  "banLog": "875123381769490483",
-  "jailLog": "875123331030982657",
-  "muteLog": "875123398878052442",
-  "warnLog": "875123331030982657",
-  "yasakTagLog": "875123591627284621",
-  "taglıLog": "875123591627284621",
-  "denetimBilgi": "875123568764137513",
-  "tagLog": "875123591627284621",
+  "banLog": "",
+  "jailLog": "",
+  "muteLog": "",
+  "warnLog": "",
+  "yasakTagLog": "",
+  "taglıLog": "",
+  "denetimBilgi": "",
+  "tagLog": "",
   "activity": "",
-  "botSesKanal": "856590609132945449",
+  "botSesKanal": "",
   "komutKanal": [
-    "815844946757681172",
-    "865923905135050772"
+    "",
+    ""
   ],
-  "genelSohbet": "856638610673238057",
-  "girisKanal": "820250137648955402",
-  "davetKanalı": "853275604530626590",
+  "genelSohbet": "",
+  "girisKanal": "",
+  "davetKanalı": "",
   "publicParents": [
-    "815844884761673738"
+    ""
 ],
 "privateParents": [
-    "815844890612989952"
+    ""
 ],
 "gameParents": [
-    "880025608766259251"
+    ""
 ],
 "regParents": [
-    "815844871755006022"
+   ""
 ]
 }
