@@ -1,3 +1,2 @@
-Ananı sikim dc gibi
-
-boş uygulamaya boş botlar
+Settings klasöründeki json dosyalarını eksiksiz doldurunuz.
+Çok iyi değiller ama kötü de değiller.
