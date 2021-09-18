@@ -19,6 +19,6 @@ config.tokens.forEach(token => {
   })
   clients.login(token).then(e => {
   }).catch(e => {
-    console.log(`${token.substring(Math.floor(token.length / 2))} giriş yapamadı.`);
+    console.log(`${token.substring(Math.floor(token.length / 2))} Discord API Botun tokenini doğrulayamadı.`);
   });
 });
