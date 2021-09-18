@@ -84,5 +84,17 @@ module.exports = {
       error: '../../../Logger/[2]error.log',
       log: '../../../Logger/[3]combined.outerr.log'
     }, 
+     {
+      name: "CHAT_GUARD",
+      namespace: "Erkal",
+      script: 'main.js',
+      watch: false,
+      exec_mode: "cluster",
+      max_memory_restart: "1G",
+      cwd: "./BOTLAR/BOTS/Chat_Guard",
+      output: '../../../Logger/[1]out.log',
+      error: '../../../Logger/[2]error.log',
+      log: '../../../Logger/[3]combined.outerr.log'
+    }, 
   ]
 };
