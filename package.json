@@ -1,14 +1,10 @@
 {
-  "name": "botlar",
+  "name": "erkalv13bots",
   "version": "1.0.0",
   "description": "",
   "main": "app.config.js",
   "scripts": {
-    "heroku-postbuild": "npm install pm2",
-    "start": "pm2-runtime start app.config.js --env production"
-  },
-  "engines": {
-    "node": "16.6"
+    "start": "pm2 start app.config.js"
   },
   "author": "Erkal",
   "license": "MIT",
